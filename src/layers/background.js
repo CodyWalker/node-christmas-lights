@@ -1,14 +1,16 @@
 'use strict';
 
 const Layer = require('./layer.js');
-const Color = require('color2');
+const RGBA = require('../color/rgba.js');
+
+const black = RGBA.fromValues(0, 0, 0, 1);
 
 class Background extends Layer {
   constructor(tree) {
     super(tree);
 
     for (var i = 0; i < this.tree.size; i++) {
-      this.colors[i] = Color('rgba(0,0,0,1)');
+      RGBA.copy(this.colors[i], black);
     }
   }
 

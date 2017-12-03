@@ -1,7 +1,8 @@
 'use strict';
 
-const Color = require('color2');
-//const composite = require('../utils/composite.js')
+const RGBA = require('../color/rgba.js');
+
+const transparentBlack = RGBA.fromValues(0, 0, 0, 0);
 
 class Layer {
   constructor(tree) {
@@ -9,7 +10,7 @@ class Layer {
     this.colors = [];
 
     for (var i = 0; i < this.tree.size; i++) {
-      this.colors[i] = Color('rgba(255,0,0,0.25)');
+      this.colors[i] = RGBA.clone(transparentBlack);
     }
   }
 
@@ -18,13 +19,11 @@ class Layer {
   }
 
   blend(colors) {
-    var result = [];
-
     for (var i = 0; i < this.colors.length; i++) {
-      result[i] = this.colors[i].over(colors[i]);
+      RGBA.composite(this.colors[i], this.colors[i], colors[i]);
     };
 
-    return result;
+    return this.colors;
   }
 }
 
