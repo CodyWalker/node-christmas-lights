@@ -9,6 +9,8 @@
   "author": "Cody Walker",
   "license": "MIT",
   "dependencies": {
+    "eases": "^1.0.8",
+    "lodash": "^4.17.4",
     "opc": "^1.1.3"
   }
 }
