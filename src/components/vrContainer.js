@@ -41,7 +41,7 @@ class VRContainer extends React.Component {
     }
 
     return (
-      <Scene>
+      <Scene embedded="true">
         <Entity primitive='a-sky' color='#6EBAA7' />
         <Entity light={{type: 'point'}}/>
         <Entity text={{value: 'Hello, WebVR!'}}/>
