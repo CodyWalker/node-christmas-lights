@@ -30,7 +30,7 @@ class CalibrationPage extends React.Component {
       <Row>
         <Col style={{height: '100vh', overflowY: 'scroll'}}>
           <h1>node-christmas-lights Calibration</h1>
-          <LightsContainer />
+          <LightsContainer currentLight={this.state.index} />
           <PointsTable points={this.state.points} />
         </Col>
         <Col style={{height: '100vh'}}>

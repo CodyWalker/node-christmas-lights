@@ -15,7 +15,7 @@ class PointsTable extends React.Component {
         </thead>
         <tbody>
           { this.props.points.map((point, i) => (
-            <tr>
+            <tr key={i}>
               <th>{i}</th>
               <td>{point[0]}</td>
               <td>{point[1]}</td>
