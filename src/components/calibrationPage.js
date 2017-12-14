@@ -1,6 +1,7 @@
 const React = require('react');
 import { Container, Row, Col } from 'reactstrap';
 import VRContainer from './vrContainer.js';
+import LightsContainer from './lightsContainer.js';
 import PointsTable from './pointsTable.js';
 
 class CalibrationPage extends React.Component {
@@ -29,6 +30,7 @@ class CalibrationPage extends React.Component {
       <Row>
         <Col style={{height: '100vh', overflowY: 'scroll'}}>
           <h1>node-christmas-lights Calibration</h1>
+          <LightsContainer />
           <PointsTable points={this.state.points} />
         </Col>
         <Col style={{height: '100vh'}}>

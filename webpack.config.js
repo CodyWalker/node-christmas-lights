@@ -57,6 +57,12 @@ module.exports = {
       inject: false,
       template: require('html-webpack-template'),
       appMountId: 'root',
+    }),
+    new webpack.DefinePlugin({
+      'process.env': {
+        NODE_ENV: JSON.stringify(process.env.NODE_ENV),
+        APP_ENV: JSON.stringify('browser')
+      }
     })
   ],
   /*plugins: [
