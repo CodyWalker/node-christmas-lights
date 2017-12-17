@@ -1,8 +1,10 @@
 const React = require('react');
-import { Container, Row, Col } from 'reactstrap';
+import { Container, Row, Col, Form } from 'reactstrap';
 import VRContainer from './vrContainer.js';
 import LightsContainer from './lightsContainer.js';
 import PointsTable from './pointsTable.js';
+import IndexControls from './indexControls.js';
+import ExportTree from './exportTree.js';
 
 class CalibrationPage extends React.Component {
   constructor(props) {
@@ -22,7 +24,13 @@ class CalibrationPage extends React.Component {
     this.setState({
       points: newPoints,
       index: this.state.index + 1
-    })
+    });
+  }
+
+  updateIndex(index) {
+    this.setState({
+      index: index
+    });
   }
 
   render() {
@@ -30,7 +38,20 @@ class CalibrationPage extends React.Component {
       <Row>
         <Col style={{height: '100vh', overflowY: 'scroll'}}>
           <h1>node-christmas-lights Calibration</h1>
-          <LightsContainer currentLight={this.state.index} />
+
+          <Row>
+            <Col>
+              <Form inline>
+                <LightsContainer currentLight={ this.state.index } />
+                <IndexControls
+                  index={ this.state.index }
+                  updateIndex= { this.updateIndex.bind(this) }
+                />
+                <ExportTree points={ this.state.points } />
+              </Form>
+            </Col>
+          </Row>
+
           <PointsTable points={this.state.points} />
         </Col>
         <Col style={{height: '100vh'}}>
