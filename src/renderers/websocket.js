@@ -11,9 +11,6 @@ class WebsocketRenderer extends Renderer {
     this.socket = new WebSocketAsPromised(`ws://${host}:${port}`);
     this.openPromise = this.socket.open();
 
-    // this.buffer = new Uint8Array(4 + (tree.size * 3));
-    // this.buffer.fill(0);
-
     this.controlBuffer = new Buffer(4);
     this.controlBuffer.fill(0x00);
 
@@ -29,14 +26,6 @@ class WebsocketRenderer extends Renderer {
       mapPixels(this.strands, colors);
 
       const sendBuffer = Buffer.concat([this.controlBuffer, this.strands.masterStrand.buffer]);
-
-      // for (var i = 0; i < this.tree.size; i++) {
-      //   const offset = 4 + (i * 3);
-      //
-      //   this.buffer[offset + 0] = colors[i].values[0];
-      //   this.buffer[offset + 1] = colors[i].values[1];
-      //   this.buffer[offset + 2] = colors[i].values[2];
-      // }
 
       this.openPromise.then(() => {
         return this.socket.send(sendBuffer)

@@ -1,0 +1,16 @@
+{
+  "size": 200,
+  "hardware": {
+    "outputSize": 800,
+    "strands": [
+      {
+        "start": 0,
+        "end": 50
+      },
+      {
+        "start": 100,
+        "end": 150
+      }
+    ]
+  }
+}

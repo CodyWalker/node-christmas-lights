@@ -13,24 +13,24 @@ const saturatedBitmaticolors = require('./palettes/saturatedBitmaticolors.js');
 
 const RGBA = require('./color/rgba.js');
 
+const treeOptions = require('./tree.json');
 
-
-const tree = new Tree({ size: 800 });
+const tree = new Tree(treeOptions);
 
 const background = new Background(tree);
-const drippingColors = new DrippingColors(tree, saturatedBitmaticolors, 0.003);
-//const pulse = new Pulse(tree, 1000);
+//const drippingColors = new DrippingColors(tree, saturatedBitmaticolors, 0.003);
+const pulse = new Pulse(tree, 1000);
 
-const renderer = new OPCRenderer(tree, 7890, "192.168.7.2");
+const renderer = new OPCRenderer(tree, 7890, "172.16.1.170");
 
 const fpsCounter = new FPSCounter(100);
 
 function renderFrame() {
   const frameTime = getTime();
 
-  drippingColors.update(frameTime);
+  pulse.update(frameTime);
 
-  const frameColors = drippingColors.blend(background.colors);
+  const frameColors = pulse.blend(background.colors);
 
   renderer.update(frameColors).then(() => {
     const renderTime = getTime() - frameTime;
