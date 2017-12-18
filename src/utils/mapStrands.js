@@ -1,3 +1,5 @@
+'use strict';
+
 const createStrand = require("opc/strand");
 
 function createStrands(tree) {
@@ -24,7 +26,7 @@ function mapPixels(strands, pixels) {
         j,
         pixels[accumulator].values[0],
         pixels[accumulator].values[1],
-        pixels[accumulator].values[2],
+        pixels[accumulator].values[2]
       );
 
       accumulator += 1;
