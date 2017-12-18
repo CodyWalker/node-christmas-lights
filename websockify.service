@@ -1,0 +1,11 @@
+[Unit]
+Description=Websockify proxy for LEDScape
+After=network.target
+
+[Service]
+WorkingDirectory=/home/debian/websockify/
+ExecStart=/usr/bin/python2.7 /home/debian/websockify/websockify.py 7891 127.0.0.1:7890
+
+[Install]
+WantedBy=multi-user.target
+
