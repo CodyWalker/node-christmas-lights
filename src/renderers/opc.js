@@ -2,8 +2,7 @@
 
 const Socket = require("net").Socket;
 const createOPCStream = require("opc");
-const { createStrands, mapPixels } = require('../utils/mapStrands.js');
-
+const mapStrands = require('../utils/mapStrands.js');
 
 const Renderer = require('./renderer.js');
 
@@ -19,12 +18,12 @@ class OPCRenderer extends Renderer {
     this.stream.pipe(this.socket);
 
     // this.strand = createStrand(800);
-    this.strands = createStrands(tree);
+    this.strands = mapStrands.createStrands(tree);
   }
 
   update(colors) {
     var promise = new Promise((resolve, reject) => {
-      mapPixels(this.strands, colors);
+      mapStrands.mapPixels(this.strands, colors);
 
       // Write the pixel colors to the device on channel 0
       this.stream.writePixels(0, this.strands.masterStrand.buffer);
