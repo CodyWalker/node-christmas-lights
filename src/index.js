@@ -8,6 +8,7 @@ const Tree = require('./tree.js');
 const Pulse = require('./layers/pulse.js');
 const Background = require('./layers/background.js');
 const DrippingColors = require('./layers/drippingColors.js');
+const PlaneSweep = require('./layers/planeSweep.js');
 
 const saturatedBitmaticolors = require('./palettes/saturatedBitmaticolors.js');
 
@@ -19,7 +20,8 @@ const tree = new Tree(treeOptions);
 
 const background = new Background(tree);
 //const drippingColors = new DrippingColors(tree, saturatedBitmaticolors, 0.003);
-const pulse = new Pulse(tree, 1000);
+//const pulse = new Pulse(tree, 1000);
+const planeSweep = new PlaneSweep(tree, saturatedBitmaticolors);
 
 const renderer = new OPCRenderer(tree, 7890, "172.16.1.170");
 
@@ -28,9 +30,9 @@ const fpsCounter = new FPSCounter(100);
 function renderFrame() {
   const frameTime = getTime();
 
-  pulse.update(frameTime);
+  planeSweep.update(frameTime);
 
-  const frameColors = pulse.blend(background.colors);
+  const frameColors = planeSweep.blend(background.colors);
 
   renderer.update(frameColors).then(() => {
     const renderTime = getTime() - frameTime;
