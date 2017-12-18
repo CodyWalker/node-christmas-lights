@@ -6,7 +6,7 @@ import ReactDOM from 'react-dom';
 import { vec4, mat4, quat } from 'gl-matrix';
 
 // Bic pen
-const pointerOffset = vec4.fromValues(0, -0.071, -0.103, 1);
+const pointerOffset = vec4.fromValues(0, -0.071, -0.170, 1);
 
 //Drum stick
 //const pointerOffset = vec4.fromValues(0, -0.134, -0.358, 1);

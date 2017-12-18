@@ -9,27 +9,14 @@ const CalibrationLayer = require('../layers/calibration.js');
 
 const saturatedBitmaticolors = require('../palettes/saturatedBitmaticolors.js');
 
+import treeOptions from '../tree.json';
+
 
 class LightsContainer extends React.Component {
   constructor(props) {
     super(props);
 
-    this.tree = new Tree({
-      size: 200,
-      hardware: {
-        outputSize: 800,
-        strands: [
-          {
-            start: 0,
-            end: 50
-          },
-          {
-            start: 100,
-            end: 150
-          },
-        ]
-      }
-    });
+    this.tree = new Tree(treeOptions);
 
     this.background = new Background(this.tree);
     this.calibrationLayer = new CalibrationLayer(this.tree);
