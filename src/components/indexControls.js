@@ -18,7 +18,7 @@ class IndexControls extends React.Component {
             <Input
               id="currentIndex"
               value={ this.props.index }
-              onChange={ (e) => this.props.updateIndex(e.target.value) }
+              onChange={ (e) => this.props.updateIndex(parseInt(e.target.value)) }
             />
 
             <InputGroupButton>
