@@ -9,6 +9,7 @@ const Pulse = require('./layers/pulse.js');
 const Background = require('./layers/background.js');
 const DrippingColors = require('./layers/drippingColors.js');
 const PlaneSweep = require('./layers/planeSweep.js');
+const CubeThing = require('./layers/cubeThing.js');
 
 const saturatedBitmaticolors = require('./palettes/saturatedBitmaticolors.js');
 
@@ -22,6 +23,7 @@ const background = new Background(tree);
 //const drippingColors = new DrippingColors(tree, saturatedBitmaticolors, 0.003);
 //const pulse = new Pulse(tree, 1000);
 const planeSweep = new PlaneSweep(tree, saturatedBitmaticolors);
+//const cubeThing = new CubeThing(tree, saturatedBitmaticolors);
 
 const renderer = new OPCRenderer(tree, 7890, "10.33.8.190");
 

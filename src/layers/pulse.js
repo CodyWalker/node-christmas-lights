@@ -5,7 +5,7 @@ const Layer = require('./layer.js');
 
 
 const color1 = RGBA.fromValues(0, 0, 0, 0);
-const color2 = RGBA.fromValues(255, 255, 255, 1);
+const color2 = RGBA.fromValues(128, 128, 128, 1);
 
 class Pulse extends Layer {
   constructor(tree, frequency) {

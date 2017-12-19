@@ -19,7 +19,7 @@ class PlaneSweep extends Layer {
     this.palette = palette;
 
     this.frequency = 6000;
-    this.probability = .01;
+    this.probability = .02;
 
     this.planes = [];
 
