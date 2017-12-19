@@ -10,7 +10,7 @@ class PlaneSweep extends Layer {
   constructor(tree, palette) {
     super(tree);
     this.centroid = vec3.fromValues(0, 0, 0);
-    this.radius = 1;
+    this.radius = 2;
 
     for (var i = 0; i < tree.size; i++) {
       RGBA.copy(this.colors[i], blackColor);

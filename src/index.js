@@ -23,7 +23,7 @@ const background = new Background(tree);
 //const pulse = new Pulse(tree, 1000);
 const planeSweep = new PlaneSweep(tree, saturatedBitmaticolors);
 
-const renderer = new OPCRenderer(tree, 7890, "172.16.1.170");
+const renderer = new OPCRenderer(tree, 7890, "10.33.8.190");
 
 const fpsCounter = new FPSCounter(100);
 
