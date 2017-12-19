@@ -12,7 +12,8 @@
   "dependencies": {
     "eases": "^1.0.8",
     "lodash": "^4.17.4",
-    "opc": "^1.1.3"
+    "opc": "^1.1.3",
+    "gl-matrix": "^2.4.0"
   },
   "devDependencies": {
     "aframe": "^0.7.1",
@@ -26,7 +27,6 @@
     "css-loader": "^0.28.7",
     "file-loader": "^1.1.5",
     "file-saver": "^1.3.3",
-    "gl-matrix": "^2.4.0",
     "html-webpack-plugin": "^2.30.1",
     "html-webpack-template": "^6.1.0",
     "react": "^16.2.0",

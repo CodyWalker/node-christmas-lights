@@ -1,3 +1,4 @@
+'use strict';
 const RGBA = require('../color/rgba.js');
 const Layer = require('./layer.js');
 

@@ -1,3 +1,4 @@
+'use strict';
 const vec3 = require('gl-matrix').vec3;
 
 function getCentroid(points) {
